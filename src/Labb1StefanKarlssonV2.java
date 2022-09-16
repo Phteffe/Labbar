@@ -46,7 +46,7 @@ public class Labb1StefanKarlssonV2 {
                         System.out.println("Between hours: " + sortedHourlyRate[i].getTime() + " the cost is: " + sortedHourlyRate[i].getPrice() + " öre.");
                     }
                 } else if (parsedInput == 4) {
-                    HourlyRate[] bestChargingRange = calculateBestChargingRange(hourlyRate);
+                    HourlyRate[] bestChargingRange = cheapestCarChargingTime(hourlyRate);
                     System.out.println("Best range:");
                     for (HourlyRate rate : bestChargingRange) {
                         System.out.println("Between hours: " + rate.getTime() + " the cost is: " + rate.getPrice() + " öre.");
@@ -108,11 +108,10 @@ public class Labb1StefanKarlssonV2 {
                 }
             }
         }
-
         return sortedHourlyRate;
     }
 
-    private static HourlyRate[] calculateBestChargingRange(HourlyRate[] hourlyRate) {
+    private static HourlyRate[] cheapestCarChargingTime(HourlyRate[] hourlyRate) {
 
         HourlyRate[] bestChargingRange = new HourlyRate[4];
         double priceSum = 0;
@@ -126,7 +125,7 @@ public class Labb1StefanKarlssonV2 {
             double rangeSum = hourlyRate[i].getPrice();
 
             for (int j = i + 1; j < i + 4; j++) {
-                rangeSum = rangeSum + hourlyRate[j].getPrice();
+                rangeSum += hourlyRate[j].getPrice();
             }
 
             if (rangeSum < priceSum) {
