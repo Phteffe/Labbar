@@ -1,3 +1,5 @@
+package se.iths.labbar.labbone;
+
 public class HourlyRate {
 
     private int price;

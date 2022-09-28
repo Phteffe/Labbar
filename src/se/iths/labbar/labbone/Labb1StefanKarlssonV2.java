@@ -1,3 +1,5 @@
+package se.iths.labbar.labbone;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -25,47 +27,74 @@ public class Labb1StefanKarlssonV2 {
                 }
 
                 if (parsedInput == 1) {
-                    System.out.println("Input price for every hour span (full öre):");
-
-                    for (int i = 0; i < hourSpanArray.length; i++) {
-                        System.out.print(hourSpanArray[i] + ": ");
-                        hourlyRate[i] = timePriceInput(hourSpanArray[i], scanner.nextInt());
-                    }
+                    ifInputOne(hourlyRate);
                 } else if (parsedInput == 2) {
-                    HourlyRate[] sortedHourlyRate = sortHourlyRateByPrice(hourlyRate);
-                    System.out.println("(Lowest) Between: " + sortedHourlyRate[0].getTime() + " the price is " + sortedHourlyRate[0].getPrice() + " öre.");
-                    System.out.println("");
-                    System.out.println("(Highest) Between: " + sortedHourlyRate[hourlyRate.length - 1].getTime() + " the price is " + sortedHourlyRate[sortedHourlyRate.length - 1].getPrice() + " öre.");
-                    System.out.println("");
-                    double average = getAverage(hourlyRate);
-                    System.out.println("Average: " + average + " öre.");
-                    System.out.println("");
+                    ifInputTwo(hourlyRate);
                 } else if (parsedInput == 3) {
-                    HourlyRate[] sortedHourlyRate = sortHourlyRateByPrice(hourlyRate);
-                    for (int i = 0; i < hourlyRate.length; i++) {
-                        System.out.println("Between hours: " + sortedHourlyRate[i].getTime() + " the cost is: " + sortedHourlyRate[i].getPrice() + " öre.");
-                    }
+                    ifInputThree(hourlyRate);
                 } else if (parsedInput == 4) {
-                    HourlyRate[] bestChargingRange = cheapestCarChargingTime(hourlyRate);
-                    System.out.println("Best range:");
-                    for (HourlyRate rate : bestChargingRange) {
-                        System.out.println("Between hours: " + rate.getTime() + " the cost is: " + rate.getPrice() + " öre.");
-                        sum += rate.getPrice();
-                    }
-                    double average = (double) sum / 4;
-                    System.out.println("Total cost of the hours: " + sum);
-                    System.out.println("Average cost per hour is: " + average);
+                    sum = ifInputFour(hourlyRate, sum);
                 } else if (input.equalsIgnoreCase("e")) {
-                    System.out.println("Ending program.");
-//                    System.exit(0);
-                    runProgram = false;
+                    runProgram = ifInputE();
                 } else {
-                    System.out.println("Wrong input.");
-                    System.out.println(" ");
+                    wrongInputOutput();
                 }
 
             }
         } while (runProgram);
+    }
+
+    private static void wrongInputOutput() {
+        System.out.println("Wrong input.");
+        System.out.println(" ");
+    }
+
+    private static void ifInputOne(HourlyRate[] hourlyRate) {
+        System.out.println("Input price for every hour span (full öre):");
+
+        for (int i = 0; i < hourSpanArray.length; i++) {
+            System.out.print(hourSpanArray[i] + ": ");
+            hourlyRate[i] = timePriceInput(hourSpanArray[i], scanner.nextInt());
+        }
+    }
+
+    private static boolean ifInputE() {
+        boolean runProgram;
+        System.out.println("Ending program.");
+//                    System.exit(0);
+        runProgram = false;
+        return runProgram;
+    }
+
+    private static int ifInputFour(HourlyRate[] hourlyRate, int sum) {
+        HourlyRate[] bestChargingRange = cheapestCarChargingTime(hourlyRate);
+        System.out.println("Best range:");
+        for (HourlyRate rate : bestChargingRange) {
+            System.out.println("Between hours: " + rate.getTime() + " the cost is: " + rate.getPrice() + " öre.");
+            sum += rate.getPrice();
+        }
+        double average = (double) sum / 4;
+        System.out.println("Total cost of the hours: " + sum);
+        System.out.println("Average cost per hour is: " + average);
+        return sum;
+    }
+
+    private static void ifInputThree(HourlyRate[] hourlyRate) {
+        HourlyRate[] sortedHourlyRate = sortHourlyRateByPrice(hourlyRate);
+        for (int i = 0; i < hourlyRate.length; i++) {
+            System.out.println("Between hours: " + sortedHourlyRate[i].getTime() + " the cost is: " + sortedHourlyRate[i].getPrice() + " öre.");
+        }
+    }
+
+    private static void ifInputTwo(HourlyRate[] hourlyRate) {
+        HourlyRate[] sortedHourlyRate = sortHourlyRateByPrice(hourlyRate);
+        System.out.println("(Lowest) Between: " + sortedHourlyRate[0].getTime() + " the price is " + sortedHourlyRate[0].getPrice() + " öre.");
+        System.out.println("");
+        System.out.println("(Highest) Between: " + sortedHourlyRate[hourlyRate.length - 1].getTime() + " the price is " + sortedHourlyRate[sortedHourlyRate.length - 1].getPrice() + " öre.");
+        System.out.println("");
+        double average = getAverage(hourlyRate);
+        System.out.println("Average: " + average + " öre.");
+        System.out.println("");
     }
 
     private static void startMenu() {

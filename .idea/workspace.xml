@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="278b513b-161d-45b3-b095-6eadb4959c23" name="Changes" comment="almost finished program 16/09">
+    <list default="true" id="278b513b-161d-45b3-b095-6eadb4959c23" name="Changes" comment="Finished Labb1 17/09">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/se/iths/labbar/labbtwo/LabbTwoStefanKarlsson.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/se/iths/labbar/labbtwo/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HourlyRate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/iths/labbar/labbone/HourlyRate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Labb1StefanKarlssonV2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/iths/labbar/labbone/Labb1StefanKarlssonV2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,17 +35,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/phtef/OneDrive/Documents/Skolarbete_java/skoljavaHTtwentytwo/src/Labb1StefanKarlssonV1.java&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/phtef/OneDrive/Documents/Skolarbete_java/skoljavaHTtwentytwo/src/Labb1StefanKarlssonV1.java"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Labb1StefanKarlssonV2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Labb1StefanKarlssonV2" />
+      <option name="MAIN_CLASS_NAME" value="se.iths.labbar.labbone.Labb1StefanKarlssonV2" />
       <module name="Labbar" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -62,7 +68,8 @@
       <updated>1662977189469</updated>
       <workItem from="1662977190857" duration="12271000" />
       <workItem from="1663248180191" duration="8934000" />
-      <workItem from="1663328013079" duration="594000" />
+      <workItem from="1663328013079" duration="957000" />
+      <workItem from="1664271187885" duration="1527000" />
     </task>
     <task id="LOCAL-00001" summary="First commit Labbar">
       <created>1662980779556</created>
@@ -106,7 +113,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663326736868</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Finished Labb1 17/09">
+      <created>1663413326956</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1663413326956</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,6 +142,7 @@
     <MESSAGE value="update" />
     <MESSAGE value="update 13/09" />
     <MESSAGE value="almost finished program 16/09" />
-    <option name="LAST_COMMIT_MESSAGE" value="almost finished program 16/09" />
+    <MESSAGE value="Finished Labb1 17/09" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished Labb1 17/09" />
   </component>
 </project>
