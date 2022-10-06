@@ -1,0 +1,6 @@
+1,General,Swedish Match,snus,45,25
+2,Fjällen,Lundgrens,snus,49,33
+3,Skåne,Lundgrens,snus,48,7
+4,Marlboro red,Marlboro,cigarettes,68,13
+5,LM blå,L&M,cigarettes,59,87
+6,Gula Blend,Blend,cigarettes,53,29
