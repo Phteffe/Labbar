@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="278b513b-161d-45b3-b095-6eadb4959c23" name="Changes" comment="Add Labbtwo">
-      <change afterPath="$PROJECT_DIR$/src/se/iths/labbar/labbtwo/Category.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/se/iths/labbar/labbtwo/CategoryService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/se/iths/labbar/labbtwo/LabbTwoStefanKarlssonV2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/se/iths/labbar/labbtwo/ProductService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/se/iths/labbar/labbtwo/Products.java" afterDir="false" />
+    <list default="true" id="278b513b-161d-45b3-b095-6eadb4959c23" name="Changes" comment="Add LabbtwoV2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/se/iths/labbar/labbtwo/CsvReader.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/se/iths/labbar/labbtwo/LabbTwoStefanKarlsson.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/se/iths/labbar/labbtwo/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/iths/labbar/labbtwo/ProductService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/se/iths/labbar/labbtwo/TobaccoProduct.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/se/iths/labbar/labbtwo/TobaccoProductService.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/se/iths/labbar/labbtwo/WritingToCSV.java" beforeDir="false" />
@@ -57,7 +53,7 @@
       <recent name="C:\Users\phtef\OneDrive\Documents\Skolarbete_java\Labbar\src\se\iths\labbar\labbtwo" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.WritingToCSV">
+  <component name="RunManager" selected="Application.LabbTwoStefanKarlssonV2">
     <configuration name="Labb1StefanKarlssonV2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="se.iths.labbar.labbone.Labb1StefanKarlssonV2" />
       <module name="Labbar" />
@@ -67,6 +63,19 @@
     </configuration>
     <configuration name="LabbTwoStefanKarlsson" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="se.iths.labbar.labbtwo.LabbTwoStefanKarlsson" />
+      <module name="Labbar" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="se.iths.labbar.labbtwo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LabbTwoStefanKarlssonV2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="se.iths.labbar.labbtwo.LabbTwoStefanKarlssonV2" />
       <module name="Labbar" />
       <extension name="coverage">
         <pattern>
@@ -93,6 +102,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LabbTwoStefanKarlssonV2" />
         <item itemvalue="Application.WritingToCSV" />
         <item itemvalue="Application.LabbTwoStefanKarlsson" />
         <item itemvalue="Application.Labb1StefanKarlssonV2" />
@@ -117,7 +127,7 @@
       <workItem from="1665066671004" duration="7633000" />
       <workItem from="1665141007625" duration="4000" />
       <workItem from="1665394203577" duration="3905000" />
-      <workItem from="1665574720497" duration="745000" />
+      <workItem from="1665574720497" duration="2239000" />
     </task>
     <task id="LOCAL-00001" summary="First commit Labbar">
       <created>1662980779556</created>
@@ -182,7 +192,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665073679152</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Add LabbtwoV2">
+      <created>1665575711970</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1665575711970</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,6 +225,7 @@
     <MESSAGE value="Finished Labb1 17/09" />
     <MESSAGE value="reworked labb with feedback" />
     <MESSAGE value="Add Labbtwo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Labbtwo" />
+    <MESSAGE value="Add LabbtwoV2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add LabbtwoV2" />
   </component>
 </project>
