@@ -9,47 +9,49 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class CsvReader {
-    private static Pattern pattern = Pattern.compile(",");
-    static Path csvPath = Path.of("resources", "products.csv");
-    static List<Product> products = new ArrayList<>();
+public class CSVReader {
+    private static final Pattern pattern = Pattern.compile(",");
+    private static final Path csvPath = Path.of("src\\se\\iths\\labbar\\Labbtwo\\csvfile","productList.csv");
+    static List<Product> productList = new ArrayList<>();
 
-    protected static void csvProductList() {
-        try (Stream<String> lines = Files.lines(csvPath)) {
-            products = lines.skip(2)
-                    .map(CsvReader::createProducts)
+    protected static void csvProductList(){
+        try(Stream<String> lines = Files.lines(csvPath)) {
+            productList =lines.skip(1)
+                    .map(CSVReader::createProduct)
                     .collect(Collectors.toList());
-        } catch (IOException e) {
+        }catch (IOException e){
             e.printStackTrace();
         }
     }
+    protected static Product createProduct(String line){
+        String[] product = pattern.split(line);
 
-    protected static void csvRow(Product product, List<String> strings) {
-        strings.add(String.join(",", product.getItemNumber(), product.getName(),
-                product.getBrand(),
+        return new Product(
+                product[0],
+                product[1],
+                product[2],
+                Double.parseDouble(product[3]),
+                product[4],
+                Integer.parseInt(product[5]));
+    }
+    protected static void csvRow(Product product, List<String> productList) {
+        productList.add(String.join(",",
+                String.valueOf(product.getProductId()),
                 product.getCategory(),
+                String.valueOf(product.getName()),
                 String.valueOf(product.getPrice()),
-                String.valueOf(product.getBalance())));
+                product.getBrand(),
+                String.valueOf(product.getStock())));
     }
-    protected static Product createProducts(String line) {
-        String[] arr = pattern.split(line);
+    public static void saveProduct(){
+        List<String> products = new ArrayList<>();
+        products.add("ID,Category,Name,Price,Brand,Stock");
+        productList.forEach(product -> csvRow(product, products));
 
-        return new Product(arr[0], arr[1], arr[2], arr[3], Double.parseDouble(arr[4]), Integer.parseInt(arr[5]));
-    }
-
-    protected static void saveFile() {
-        List<String> strings = new ArrayList<>();
-        strings.add("#Produkter");
-        strings.add("itemNumber, name, brand, category, price, balance");
-        ProductService.getProducts().forEach(product -> csvRow(product, strings));
-        if (!Files.exists(csvPath)) {
-            return;
-        }
         try {
-            Files.write(csvPath, strings);
-        } catch (IOException e) {
+            Files.write(csvPath, products);
+        }catch (IOException e){
             e.printStackTrace();
         }
     }
-
 }

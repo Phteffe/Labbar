@@ -1,22 +1,17 @@
 package se.iths.labbar.labbtwo;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Comparator;
+import java.util.InputMismatchException;
 import java.util.Scanner;
+
+import static se.iths.labbar.labbtwo.CSVReader.productList;
 
 public class ProductService {
 
     static Scanner scanner = new Scanner(System.in);
 
-    private static List<Product> productList = new ArrayList<>(getProduct());
 
-    private static List<Product> getProduct () {
-        return List.of(
-                new Product(new Category("INSTALLATIONSMATERIEL"), "VÄGUTTAG 1-V", 197, "SCHNEIDER", "00001", 50),
-                new Product(new Category("LAN-PRODUKTER"), "MODULARJACK KAT6", 54, "EXCEL", "00002", 45),
-                new Product(new Category("BELYSNING"), "SPOT MINI", 620, "HIDE-A-LITE", "00003", 20));
-    }
-    public static void printProducts(){
+    public static void printProducts() {
         System.out.println("PRODUCTS");
         System.out.println("--------------");
         productList.stream()
@@ -24,72 +19,105 @@ public class ProductService {
                 .sorted()
                 .forEach(System.out::println);
 
-        LabbTwoStefanKarlssonV2.backToMenu();
+        backToMenu();
     }
-    public static void printProductByCategory(){
 
-        System.out.println("Search Category:");
-        String userSerach = scanner.nextLine().toUpperCase();
+    public static void createNewProduct() {
+        String category, name, brand, productId;
+        int stock, price;
 
-        ProductService.productList.stream()
-                .filter(product ->product.getCategory().getCategoryName().equals(userSerach))
+        try {
+            System.out.println("Enter Product category: ");
+            category = scanner.nextLine().toUpperCase();
+            System.out.println("Enter product name");
+            name = scanner.nextLine().toUpperCase();
+            System.out.println("Enter brand");
+            brand = scanner.nextLine().toUpperCase();
+            System.out.println("Enter product ID");
+            productId = scanner.nextLine();
+            System.out.println("Enter Price");
+            price = scanner.nextInt();
+            scanner.nextLine();
+            System.out.println("Enter amount in stock");
+            stock = scanner.nextInt();
+            scanner.nextLine();
+
+            CSVReader.productList.add(new Product(productId, category, name, price, brand, stock));
+
+            backToMenu();
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid input");
+        }
+    }
+
+    public static void searchProduct() {
+
+        System.out.println("Search Category or Product:");
+        String userSearch = scanner.nextLine().toUpperCase();
+
+        System.out.println("RESULT:");
+        productList.stream()
+                .filter(product -> product.getCategory().contains(userSearch) || product.getName().contains(userSearch))
+                .forEach(System.out::println);
+
+        backToMenu();
+
+    }
+
+    public static void searchProductByPrice() {
+
+        try {
+            System.out.println("Enter Min Price for product:");
+            int minPriceInput = scanner.nextInt();
+            scanner.nextLine();
+            System.out.println("Enter Max Price for product");
+            int maxPriceInput = scanner.nextInt();
+            scanner.nextLine();
+
+            System.out.println("RESULT:");
+            productList.stream()
+                    .filter(price -> price.getPrice() >= minPriceInput && price.getPrice() <= maxPriceInput)
+                    .sorted(Comparator.comparing(Product::getPrice))
+                    .forEach(System.out::println);
+
+            backToMenu();
+        } catch (Exception e) {
+            System.out.println("Invalid input");
+        }
+
+    }
+
+    public static void printProductName() {
+        System.out.println("-----Products-----");
+        productList.stream()
+                .map(Product::getName)
+                .sorted()
                 .forEach(System.out::println);
 
     }
-    public static void handleProductStock(){
-        balanceMenu();
-        System.out.println("Choose product and press \"ENTER\":");
-        int userInput = scanner.nextInt();
+
+    public static void removeProduct() {
+        printProductName();
+        System.out.println("Choose a product to remove by typing it below: ");
+        String userInput = scanner.nextLine().toUpperCase();
+
+        try {
+            Product removeAProduct = productList.stream()
+                    .filter(product -> product.getName().equals(userInput))
+                    .reduce((first, second) -> second).get();
+
+            productList.remove(removeAProduct);
+
+            System.out.println(userInput + " is Successfully removed!");
+        } catch (Exception e) {
+            System.out.println("Invalid input");
+        }
+    }
+
+
+    public static void backToMenu() {
+        System.out.println("Press \"ENTER\" to return");
         scanner.nextLine();
+    }
 
-        if(userInput != 0) {
-            balanceSwitch(userInput);
-            balanceMenu();
-        }
-
-    }
-    private static void balanceSwitch(int userInput) {
-        switch (userInput) {
-            case 1:
-                System.out.println("1: " + productList.get(0).getName() +
-                        " " + productList.get(0).getBalance() + "pcs");
-                newStorageAmount(userInput);
-                break;
-            case 2:
-                System.out.println("2: " + productList.get(1).getName() +
-                        " " + productList.get(1).getBalance() + "pcs");
-                newStorageAmount(userInput);
-                break;
-            case 3:
-                System.out.println("3: " + productList.get(2).getName() +
-                        " " + productList.get(2).getBalance() + "pcs");
-                newStorageAmount(userInput);
-                break;
-            case 4:
-                System.out.println("4: " + productList.get(3).getName() +
-                        " " + productList.get(3).getBalance() + "pcs");
-                newStorageAmount(userInput);
-                break;
-            case 0:
-                break;
-            default:
-                System.out.println("Not a valid input");
-                handleProductStock();
-                break;
-        }
-    }
-    public static void balanceMenu() {
-        for (int i = 0; i < productList.size(); i++) {
-            System.out.print("\n" + (i + 1) + ":\t");
-            System.out.print(productList.get(i).getName() + ": "
-                    + productList.get(i).getBalance() +"pcs");
-        }
-        System.out.println("\n0:  Back to Main Menu");
-        System.out.println("");
-    }
-    public static void newStorageAmount(int userInput) {  //TODO Input crashar med bokstav
-        System.out.print("Enter amount:");
-        productList.get(userInput - 1).setBalance(scanner.nextInt());
-        handleProductStock();
-    }
 }

@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="278b513b-161d-45b3-b095-6eadb4959c23" name="Changes" comment="Add LabbtwoV2">
+    <list default="true" id="278b513b-161d-45b3-b095-6eadb4959c23" name="Changes" comment="Add CSVfile">
+      <change afterPath="$PROJECT_DIR$/src/se/iths/labbar/labbtwo/CSVReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/se/iths/labbar/labbtwo/Category.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/se/iths/labbar/labbtwo/CategoryService.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/se/iths/labbar/labbtwo/CsvReader.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/se/iths/labbar/labbtwo/LabbTwoStefanKarlsson.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/se/iths/labbar/labbtwo/LabbTwoStefanKarlssonV2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/iths/labbar/labbtwo/LabbTwoStefanKarlssonV2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/se/iths/labbar/labbtwo/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/iths/labbar/labbtwo/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/se/iths/labbar/labbtwo/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/iths/labbar/labbtwo/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/se/iths/labbar/labbtwo/Productlist.csv - Blad1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/iths/labbar/labbtwo/csvfile/productList.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/se/iths/labbar/labbtwo/TobaccoProduct.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/se/iths/labbar/labbtwo/TobaccoProductService.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/se/iths/labbar/labbtwo/WritingToCSV.java" beforeDir="false" />
@@ -50,6 +56,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\phtef\OneDrive\Documents\Skolarbete_java\Labbar\src\se\iths\labbar\labbtwo\csvfile" />
       <recent name="C:\Users\phtef\OneDrive\Documents\Skolarbete_java\Labbar\src\se\iths\labbar\labbtwo" />
     </key>
   </component>
@@ -127,7 +134,9 @@
       <workItem from="1665066671004" duration="7633000" />
       <workItem from="1665141007625" duration="4000" />
       <workItem from="1665394203577" duration="3905000" />
-      <workItem from="1665574720497" duration="2239000" />
+      <workItem from="1665574720497" duration="4207000" />
+      <workItem from="1665918039086" duration="3924000" />
+      <workItem from="1665938096440" duration="1387000" />
     </task>
     <task id="LOCAL-00001" summary="First commit Labbar">
       <created>1662980779556</created>
@@ -199,7 +208,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665575711970</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Add CSVfile">
+      <created>1665577116865</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1665577116865</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,6 +242,7 @@
     <MESSAGE value="reworked labb with feedback" />
     <MESSAGE value="Add Labbtwo" />
     <MESSAGE value="Add LabbtwoV2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add LabbtwoV2" />
+    <MESSAGE value="Add CSVfile" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add CSVfile" />
   </component>
 </project>

@@ -3,77 +3,47 @@ package se.iths.labbar.labbtwo;
 import java.util.Objects;
 
 public class Product {
-    private Category category;
-    private String name;
-    private int price;
-    private String brand;
-    private String productId;
-    private int balance;
 
-    public Product(Category category, String name, int price,
-                   String label, String productId, int stock) {
+    private final String category;
+    private final String name;
+    private final double price;
+    private final String brand;
+    private final String productId;
+    private final int stock;
+
+    public Product(String productId, String category, String name, double price,
+                   String brand, int stock) {
         this.category = category;
         this.name = name;
         this.price = price;
-        this.brand = label;
+        this.brand = brand;
         this.productId = productId;
-        this.balance = stock;
+        this.stock = stock;
     }
 
 
-    public Category getCategory() {
+    public String getCategory() {
         return category;
     }
-
 
     public String getName() {
         return name;
     }
 
-
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
-
-
 
     public String getBrand() {
         return brand;
     }
 
-
-
     public String getProductId() {
         return productId;
     }
 
-
-    public int getBalance() {
-        return balance;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
-    public void setProductId(String productId) {
-        this.productId = productId;
-    }
-
-    public void setBalance(int balance) {
-        this.balance = balance;
+    public int getStock() {
+        return stock;
     }
 
     @Override
@@ -81,22 +51,23 @@ public class Product {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Product that = (Product) o;
-        return price == that.price && balance == that.balance && Objects.equals(category, that.category) && Objects.equals(name, that.name) && Objects.equals(brand, that.brand) && Objects.equals(productId, that.productId);
+        return price == that.price && stock == that.stock && Objects.equals(category, that.category) && Objects.equals(name, that.name) && Objects.equals(brand, that.brand) && Objects.equals(productId, that.productId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(category, name, price, brand, productId, balance);
+        return Objects.hash(category, name, price, brand, productId, stock);
     }
 
     @Override
     public String toString() {
-        return "Category: " + category +
-                ", Product name: " + name +
-                ", Price: " + price + "kr"+
-                ", Brand: " + brand +
-                ", ID: " + productId +
-                ", Balance: " + balance +
-                "pcs";
+        return "[ID]: " + productId +
+                " [Category]: " + category +
+                " [Name]: " + name +
+                " [Price]: " + price +
+                " [Brand]: " + brand +
+                " [Stock]: " + stock +
+                " left";
     }
 }
+
